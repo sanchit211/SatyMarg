@@ -5,7 +5,7 @@ import { Header } from "./Header";
 
 export const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full lg:h-screen overflow-hidden">
       <Header />
       <div className="relative w-full h-full">
         {/* Background Image */}
@@ -21,7 +21,7 @@ export const HeroSection = () => {
         {/* Content - Added padding top to avoid header collision */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8 pt-20 md:pt-0">
           {/* Main Heading - English */}
-          <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight lg:leading-[1.1] mb-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-5xl">
+          <h1 className="font-bold text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight lg:leading-[1.1] my-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-5xl">
             A Modern, Fully Furnished Office in a Prestigious Prime Business Hub – Riyadh, Saudi Arabia
           </h1>
 
@@ -41,7 +41,7 @@ export const HeroSection = () => {
               </div>
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed">
                 Located in a brand-new building on Al Takhassusi Road, at the intersection with King Abdullah Road, in the prestigious Al-Mohammadiyah District – directly opposite Riyadh Metro Main Station.
-                <br /><br />
+                <br/>
                 <span className="font-semibold text-lg">(Available for weekly or monthly rent).</span>
               </p>
             </div>
@@ -57,7 +57,7 @@ export const HeroSection = () => {
                 </div>
               </div>
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed">
-يقع في مبنى جديد على طريق التخصصي عند تقاطع طريق الملك عبدالله، في حي المحمدية المرموق – مقابل المحطة الرئيسية لمترو الرياض مباشرة.<br /><br />
+يقع في مبنى جديد على طريق التخصصي عند تقاطع طريق الملك عبدالله، في حي المحمدية المرموق – مقابل المحطة الرئيسية لمترو الرياض مباشرة.<br />
                 <span className="font-semibold text-lg">(متاح للإيجار الأسبوعي أو الشهري).</span>
               </p>
             </div>
@@ -66,7 +66,7 @@ export const HeroSection = () => {
 
           {/* CTA */}
           <a href="#contact">
-            <Button className="px-6 sm:px-8 py-2 sm:py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+            <Button className="px-6 sm:px-8 py-2 sm:py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 cursor-pointer mb-5">
               <span className="font-medium text-white hover:text-black sm:text-lg lg:text-xl ">
                 Inquire Now | استفسر الآن
               </span>
