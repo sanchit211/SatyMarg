@@ -58,8 +58,8 @@ export async function POST(req) {
     // ✅ Define email options
     const mailOptions = {
       from: `"Saudi Office Rent" <${process.env.SMTP_USER}>`,
-      to:"rastogi.sanchit2119@gmail.com",
-      // to: "khulood@hkb.sa", // fixed recipient
+      // to:"rastogi.sanchit2119@gmail.com",
+      to: "khulood@hkb.sa", // fixed recipient
       replyTo: email,
       subject: subject,
       html: `
