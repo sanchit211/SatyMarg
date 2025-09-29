@@ -1,11 +1,19 @@
-// captcha
-
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { firstName, lastName, email, phone, propertyType, message, captchaToken } =
-      await req.json();
+    const { 
+      firstName, 
+      lastName, 
+      email, 
+      phone, 
+      propertyType, 
+      propertyAddress, 
+      price, 
+      message, 
+      formType,
+      captchaToken 
+    } = await req.json();
 
     // ✅ Validate reCAPTCHA token
     if (!captchaToken) {
@@ -42,20 +50,30 @@ export async function POST(req) {
       },
     });
 
+    // ✅ Define email subject based on form type
+    const subject = formType === "rent" 
+      ? "📥 New Property Rental Inquiry - Saudi Office Rent" 
+      : "🏠 New Property Listing Request - Saudi Office Rent";
+
     // ✅ Define email options
     const mailOptions = {
       from: `"Saudi Office Rent" <${process.env.SMTP_USER}>`,
-      // to: "rastogi1sanch@gmail.com",
-      to: "khulood@hkb.sa", // fixed recipient
+      to:"rastogi.sanchit2119@gmail.com",
+      // to: "khulood@hkb.sa", // fixed recipient
       replyTo: email,
-      subject: "📩 New Contact Form Submission - Saudi Office Rent",
+      subject: subject,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color:#2c3e50;">New Contact Form Submission</h2>
+          <h2 style="color:#2c3e50;">${formType === "rent" ? "New Rental Inquiry" : "New Listing Request"}</h2>
+          <p><strong>Service Type:</strong> ${formType === "rent" ? "Rent a Property" : "List my Property"}</p>
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Property Type:</strong> ${propertyType}</p>
+          ${formType === "list" ? `
+            <p><strong>Property Address:</strong> ${propertyAddress}</p>
+            <p><strong>Price:</strong> ${price}</p>
+          ` : ""}
           <p><strong>Message:</strong></p>
           <blockquote style="border-left: 4px solid #3498db; padding-left: 10px; margin: 10px 0;">
             ${message}

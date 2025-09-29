@@ -13,7 +13,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="absolute top-0 left-0 w-full z-20 bg-white pb-5">
+    <header className="absolute top-0 left-0 w-full z-20 bg-white pb-3">
       <div className="flex items-center justify-between px-6 sm:px-10 lg:px-14 pt-6">
         {/* Logo */}
         <img
