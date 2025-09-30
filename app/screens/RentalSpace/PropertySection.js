@@ -8,7 +8,8 @@ import {
   Bath,
   Camera,
   Wifi,
-  Phone
+  Phone,
+  ParkingCircle
 } from 'lucide-react';
 import { Card, CardContent } from '@/app/components/ui/card';
 
@@ -61,7 +62,12 @@ const PropertyOverview = () => {
       icon: Phone,
       titleEn: "Central Telephone System",
       titleAr: "نظام هاتف مركزي"
-    }
+    },
+   {
+  icon: ParkingCircle,
+  titleEn: "Free Parking Space",
+  titleAr: "موقف سيارات مجاني"
+}
   ];
 
   return (
@@ -128,36 +134,43 @@ const PropertyOverview = () => {
       </div>
 
       {/* Features & Amenities */}
-      <div className="space-y-12 lg:space-y-16">
-        <div className="text-center space-y-6">
-          <h2 className="font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[48px] tracking-[-0.5px] leading-tight">
-            Features & Amenities
-          </h2>
-          <p className="font-bold text-[#032174] text-2xl sm:text-3xl md:text-4xl lg:text-[32px] tracking-[-0.5px] leading-tight" dir="rtl">
-            المميزات ووسائل الراحة
-          </p>
-        </div>
+<div className="space-y-12 lg:space-y-16">
+  <div className="text-center space-y-6">
+    <h2 className="font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[42px] tracking-[-0.5px] leading-tight">
+      Features & Amenities
+    </h2>
+    <p
+      className="font-bold text-[#032174] text-2xl sm:text-3xl md:text-4xl lg:text-[30px] tracking-[-0.5px] leading-tight"
+      dir="rtl"
+    >
+      المميزات ووسائل الراحة
+    </p>
+  </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <Card key={index} className="bg-white hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6 sm:p-8 lg:p-10 text-center space-y-4 sm:space-y-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                  <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#032174]" />
-                </div>
-                <div className="space-y-2 sm:space-y-3">
-                  <h3 className="text-lg sm:text-xl font-semibold text-black">
-                    {feature.titleEn}
-                  </h3>
-                  <p className="text-lg sm:text-xl text-black" dir="rtl">
-                    {feature.titleAr}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-10 max-w-7xl mx-auto">
+    {features.map((feature, index) => (
+      <Card
+        key={index}
+        className="bg-white hover:shadow-xl transition-shadow duration-300 rounded-2xl"
+      >
+        <CardContent className="p-6 sm:p-8 lg:p-10 text-center space-y-4 sm:space-y-5">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
+            <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#032174]" />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-black">
+              {feature.titleEn}
+            </h3>
+            <p className="text-lg sm:text-xl text-black" dir="rtl">
+              {feature.titleAr}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
 
       {/* Decorative dots */}
       {/* <div className="flex justify-center space-x-2 pt-8">

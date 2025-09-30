@@ -92,9 +92,11 @@ Button.displayName = "Button";
 // Toggle Switch Component
 const ToggleSwitch = ({ isRTL, onToggle }) => {
   return (
-    <div className={`flex items-center gap-2 absolute top-4 md:top-6 z-50 ${
-      isRTL ? "left-4 md:left-auto md:right-6" : "right-4 md:right-6"
-    }`}>
+    <div
+      className={`flex items-center gap-2 absolute top-4 md:top-6 z-50 ${
+        isRTL ? "left-4 md:left-auto md:right-6" : "right-4 md:right-6"
+      }`}
+    >
       <span
         className={`text-xs sm:text-sm font-medium ${
           isRTL ? "text-[#032174]" : "text-gray-600"
@@ -127,6 +129,7 @@ const ContactSection = () => {
     email: "",
     phone: "",
     propertyType: "",
+    propertySize: "",
     propertyAddress: "",
     price: "",
     message: "",
@@ -148,7 +151,7 @@ const ContactSection = () => {
       formTypeLabel: "What would you like to do?",
       formTypeOptions: [
         { value: "rent", label: "I want to rent a property" },
-        { value: "list", label: "I want to list my property on the website" }
+        { value: "list", label: "I want to list my property on the website" },
       ],
       formFields: [
         { placeholder: "Last Name", type: "text" },
@@ -164,6 +167,7 @@ const ContactSection = () => {
         "Office",
         "Commercial",
       ],
+      propertySize: "Property Size (m²)",
       propertyAddress: "Property Address",
       price: "Price",
       messagePlaceholder: "Message",
@@ -178,7 +182,7 @@ const ContactSection = () => {
       formTypeLabel: "ماذا تريد أن تفعل؟",
       formTypeOptions: [
         { value: "rent", label: "أريد استئجار عقار" },
-        { value: "list", label: "أريد إدراج عقاري على الموقع" }
+        { value: "list", label: "أريد إدراج عقاري على الموقع" },
       ],
       formFields: [
         { placeholder: "الاسم الأخير", type: "text" },
@@ -188,6 +192,7 @@ const ContactSection = () => {
       ],
       selectLabel: "نوع العقار",
       selectOptions: ["اختر نوع العقار", "شقة", "فيلا", "مكتب", "تجاري"],
+      propertySize: "مساحة العقار (م²)",
       propertyAddress: "عنوان العقار",
       price: "السعر",
       messagePlaceholder: "الرسالة",
@@ -207,6 +212,7 @@ const ContactSection = () => {
       email: "",
       phone: "",
       propertyType: "",
+      propertySize: "",
       propertyAddress: "",
       price: "",
       message: "",
@@ -232,7 +238,11 @@ const ContactSection = () => {
 
     // Validate form type selection
     if (!formType) {
-      toast.error(isRTL ? "⚠️ يرجى اختيار نوع الخدمة" : "⚠️ Please select what you would like to do");
+      toast.error(
+        isRTL
+          ? "⚠️ يرجى اختيار نوع الخدمة"
+          : "⚠️ Please select what you would like to do"
+      );
       return;
     }
 
@@ -251,8 +261,12 @@ const ContactSection = () => {
     const validatePhone = (phone) => {
       // Allows international format with +, numbers, spaces, hyphens, parentheses
       const phoneRegex = /^[\+]?[1-9][\d]{0,15}$|^[\+]?[(]?[\d\s\-()]{10,}$/;
-      const digitsOnly = phone.replace(/\D/g, '');
-      return phoneRegex.test(phone) && digitsOnly.length >= 10 && digitsOnly.length <= 15;
+      const digitsOnly = phone.replace(/\D/g, "");
+      return (
+        phoneRegex.test(phone) &&
+        digitsOnly.length >= 10 &&
+        digitsOnly.length <= 15
+      );
     };
 
     const validateMessage = (message) => {
@@ -263,44 +277,62 @@ const ContactSection = () => {
       return name.trim().length >= 2;
     };
 
+    const validatePropertySize = (size) => {
+      return size.trim() !== "" && !isNaN(size) && parseInt(size) > 0;
+    };
+
     // Field-specific validation messages
     const validationMessages = {
       en: {
         firstNameRequired: "First name is required",
         firstNameMinLength: "First name must be at least 2 characters",
-        lastNameRequired: "Last name is required", 
+        lastNameRequired: "Last name is required",
         lastNameMinLength: "Last name must be at least 2 characters",
         emailRequired: "Email is required",
         emailInvalid: "Please enter a valid email address",
         phoneRequired: "Phone number is required",
         phoneInvalid: "Please enter a valid phone number (10-15 digits)",
         propertyTypeRequired: "Property type is required",
+        propertySizeRequired: "Property size is required",
+        propertySizeInvalid: "Please enter a valid property size",
         propertyAddressRequired: "Property address is required",
         priceRequired: "Price is required",
         messageRequired: "Message is required",
-        messageMinLength: "Message must be at least 5 characters long"
+        messageMinLength: "Message must be at least 5 characters long",
       },
       ar: {
         firstNameRequired: "الاسم الأول مطلوب",
         firstNameMinLength: "الاسم الأول يجب أن يكون على الأقل حرفين",
         lastNameRequired: "الاسم الأخير مطلوب",
-        lastNameMinLength: "الاسم الأخير يجب أن يكون على الأقل حرفين", 
+        lastNameMinLength: "الاسم الأخير يجب أن يكون على الأقل حرفين",
         emailRequired: "البريد الإلكتروني مطلوب",
         emailInvalid: "يرجى إدخال بريد إلكتروني صحيح",
         phoneRequired: "رقم الهاتف مطلوب",
         phoneInvalid: "يرجى إدخال رقم هاتف صحيح (10-15 رقم)",
         propertyTypeRequired: "نوع العقار مطلوب",
+        propertySizeRequired: "مساحة العقار مطلوبة",
+        propertySizeInvalid: "يرجى إدخال مساحة عقار صحيحة",
         propertyAddressRequired: "عنوان العقار مطلوب",
         priceRequired: "السعر مطلوب",
         messageRequired: "الرسالة مطلوبة",
-        messageMinLength: "الرسالة يجب أن تكون على الأقل 5 أحرف"
-      }
+        messageMinLength: "الرسالة يجب أن تكون على الأقل 5 أحرف",
+      },
     };
 
     const messages = isRTL ? validationMessages.ar : validationMessages.en;
 
     // Validate all fields
-    const { firstName, lastName, email, phone, propertyType, propertyAddress, price, message } = formData;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      propertyType,
+      propertySize,
+      propertyAddress,
+      price,
+      message,
+    } = formData;
 
     // First Name validation
     if (!firstName.trim()) {
@@ -350,10 +382,23 @@ const ContactSection = () => {
 
     // Additional validation for "list my property" form
     if (formType === "list") {
+      // Property Size validation
+      if (!propertySize.trim()) {
+        toast.error(messages.propertySizeRequired);
+        return;
+      }
+      if (!validatePropertySize(propertySize)) {
+        toast.error(messages.propertySizeInvalid);
+        return;
+      }
+
+      // Property Address validation
       if (!propertyAddress.trim()) {
         toast.error(messages.propertyAddressRequired);
         return;
       }
+
+      // Price validation
       if (!price.trim()) {
         toast.error(messages.priceRequired);
         return;
@@ -376,23 +421,28 @@ const ContactSection = () => {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          ...formData, 
+        body: JSON.stringify({
+          ...formData,
           formType,
-          captchaToken 
+          captchaToken,
         }),
       });
 
       const result = await response.json();
 
       if (result.success) {
-        toast.success( (isRTL ? "تم إرسال البريد بنجاح!" : "Thank you! Email sent successfully!"));
+        toast.success(
+          isRTL
+            ? "تم إرسال البريد بنجاح!"
+            : "Thank you! Email sent successfully!"
+        );
         setFormData({
           lastName: "",
           firstName: "",
           email: "",
           phone: "",
           propertyType: "",
+          propertySize: "",
           propertyAddress: "",
           price: "",
           message: "",
@@ -404,11 +454,17 @@ const ContactSection = () => {
           window.grecaptcha.reset();
         }
       } else {
-        toast.error("❌ " + (result.error || (isRTL ? "فشل إرسال البريد" : "Failed to send email")));
+        toast.error(
+          "❌ " +
+            (result.error ||
+              (isRTL ? "فشل إرسال البريد" : "Failed to send email"))
+        );
       }
     } catch (error) {
       console.error("Email send error:", error);
-      toast.error("❌ " + (isRTL ? "فشل الإرسال: " : "Failed to send: ") + error.message);
+      toast.error(
+        "❌ " + (isRTL ? "فشل الإرسال: " : "Failed to send: ") + error.message
+      );
     } finally {
       setLoading(false);
     }
@@ -449,7 +505,7 @@ const ContactSection = () => {
           <CardContent className="p-4 sm:p-6 md:p-8 lg:p-10">
             {/* Toggle Switch - Dynamic positioning based on RTL */}
             <ToggleSwitch isRTL={isRTL} onToggle={toggleRTL} />
-            
+
             <div className="flex flex-col lg:flex-row items-start justify-between gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-0">
               {/* Contact Form Section */}
               <div
@@ -459,9 +515,11 @@ const ContactSection = () => {
               >
                 <div className="flex flex-col gap-6">
                   {/* Heading */}
-                  <div className={`flex flex-col gap-2 w-full ${
-                    isRTL ? "text-right" : "text-left"
-                  }`}>
+                  <div
+                    className={`flex flex-col gap-2 w-full ${
+                      isRTL ? "text-right" : "text-left"
+                    }`}
+                  >
                     <h2 className="font-bold text-[#444444] text-xl md:text-2xl lg:text-[24px]">
                       {currentContent.heading}
                     </h2>
@@ -471,17 +529,29 @@ const ContactSection = () => {
                   </div>
 
                   {/* Form Fields */}
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-4 w-full"
+                  >
                     {/* Form Type Selection - Radio Buttons */}
                     <div className="mb-4">
-                      <label className={`block text-sm font-medium text-[#444444] mb-3 ${
-                        isRTL ? "text-right" : "text-left"
-                      }`}>
+                      <label
+                        className={`block text-sm font-medium text-[#444444] mb-3 ${
+                          isRTL ? "text-right" : "text-left"
+                        }`}
+                      >
                         {currentContent.formTypeLabel}
                       </label>
-                      <div className={`flex flex-col sm:flex-row sm:gap-6 gap-3 ${isRTL ? "text-right" : "text-left"}`}>
+                      <div
+                        className={`flex flex-col sm:flex-row sm:gap-6 gap-3 ${
+                          isRTL ? "text-right" : "text-left"
+                        }`}
+                      >
                         {currentContent.formTypeOptions.map((option) => (
-                          <label key={option.value} className="flex items-center gap-2 cursor-pointer">
+                          <label
+                            key={option.value}
+                            className="flex items-center gap-2 cursor-pointer"
+                          >
                             <input
                               type="radio"
                               name="formType"
@@ -490,7 +560,9 @@ const ContactSection = () => {
                               onChange={handleFormTypeChange}
                               className="h-4 w-4 text-[#032174] focus:ring-[#032174] border-gray-300"
                             />
-                            <span className="text-sm text-[#444444] whitespace-nowrap">{option.label}</span>
+                            <span className="text-sm text-[#444444] whitespace-nowrap">
+                              {option.label}
+                            </span>
                           </label>
                         ))}
                       </div>
@@ -540,9 +612,11 @@ const ContactSection = () => {
 
                     {/* Select */}
                     <div>
-                      <label className={`block text-sm font-medium text-[#444444] mb-2 ${
-                        isRTL ? "text-right" : "text-left"
-                      }`}>
+                      <label
+                        className={`block text-sm font-medium text-[#444444] mb-2 ${
+                          isRTL ? "text-right" : "text-left"
+                        }`}
+                      >
                         {currentContent.selectLabel}
                       </label>
                       <Select
@@ -563,6 +637,16 @@ const ContactSection = () => {
                     {/* Additional fields for "List my property" */}
                     {formType === "list" && (
                       <>
+                        {/* Property Size */}
+                        <Input
+                          name="propertySize"
+                          value={formData.propertySize}
+                          onChange={handleChange}
+                          placeholder={currentContent.propertySize}
+                          className="w-full bg-[#ffffff0d] border border-[#00000033] rounded-[5px] px-3 py-2 text-sm md:text-base"
+                          required
+                        />
+
                         {/* Property Address */}
                         <Input
                           name="propertyAddress"
@@ -610,7 +694,11 @@ const ContactSection = () => {
                       disabled={loading || !captchaToken || !formType}
                       className="w-full py-3 bg-[#032174] hover:bg-[#032174]/90 rounded-full text-white font-medium text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? (isRTL ? "جاري الإرسال..." : "Sending...") : currentContent.buttonText}
+                      {loading
+                        ? isRTL
+                          ? "جاري الإرسال..."
+                          : "Sending..."
+                        : currentContent.buttonText}
                     </Button>
                   </form>
                 </div>

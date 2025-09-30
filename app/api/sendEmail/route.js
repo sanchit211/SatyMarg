@@ -8,6 +8,7 @@ export async function POST(req) {
       email, 
       phone, 
       propertyType, 
+      propertySize,
       propertyAddress, 
       price, 
       message, 
@@ -71,6 +72,7 @@ export async function POST(req) {
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Property Type:</strong> ${propertyType}</p>
           ${formType === "list" ? `
+            <p><strong>Property Size:</strong> ${propertySize} (m²)</p>
             <p><strong>Property Address:</strong> ${propertyAddress}</p>
             <p><strong>Price:</strong> ${price}</p>
           ` : ""}
