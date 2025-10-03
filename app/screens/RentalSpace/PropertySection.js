@@ -71,7 +71,7 @@ const PropertyOverview = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20 lg:space-y-24 mt-16" id="overview">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  space-y-20 lg:space-y-24 mt-16" id="overview">
       {/* Header */}
       <div className="text-center space-y-6">
         <h1 className="font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[48px] tracking-[-0.5px] leading-tight mb-4">

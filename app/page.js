@@ -16,12 +16,13 @@ const page = () => {
       
       {/* Your existing sections */}
       <HeroSection />
-      <PropertyOverview/>
+
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-16">
           <ImageGallery />
         </div>
       </main>
+            <PropertyOverview/>
       <ContactSection/>
       <Footer/>
     </main>
