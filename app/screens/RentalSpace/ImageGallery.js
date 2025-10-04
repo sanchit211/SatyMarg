@@ -10,45 +10,45 @@ export default function ImageGallery() {
   const images = [
     {
       id: 1,
-      src: 'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: '/assets/1.png',
       alt: 'Meeting Room',
-      titleEn: 'Meeting Room',
-      titleAr: 'غرفة الاجتماعات'
+      // titleEn: 'Meeting Room',
+      // titleAr: 'غرفة الاجتماعات'
     },
     {
       id: 2,
-      src: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      src: '/assets/2.png',
       alt: 'Side View',
-      titleEn: 'Side View',
-      titleAr: 'منظر جانبي'
+      // titleEn: 'Side View',
+      // titleAr: 'منظر جانبي'
     },
     {
       id: 3,
-      src: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      src: '/assets/3.png',
       alt: 'Top View',
-      titleEn: 'Top View',
-      titleAr: 'منظر علوي'
+      // titleEn: 'Top View',
+      // titleAr: 'منظر علوي'
     },
     {
       id: 4,
-      src: 'https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      src: '/assets/4.png',
       alt: 'Hall',
-      titleEn: 'Hall',
-      titleAr: 'ردهة'
+      // titleEn: 'Hall',
+      // titleAr: 'ردهة'
     },
     {
       id: 5,
-      src: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      src: '/assets/5.png',
       alt: 'Modern Office',
-      titleEn: 'Modern Office',
-      titleAr: 'مكتب عصري'
+      // titleEn: 'Modern Office',
+      // titleAr: 'مكتب عصري'
     },
     {
       id: 6,
-      src: 'https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      src: '/assets/6.png',
       alt: 'Conference Room',
-      titleEn: 'Conference Room',
-      titleAr: 'قاعة مؤتمرات'
+      // titleEn: 'Conference Room',
+      // titleAr: 'قاعة مؤتمرات'
     }
   ];
 
@@ -108,13 +108,13 @@ export default function ImageGallery() {
           </div>
 
           {/* Image Title */}
-          <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
+          {/* <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
             <div className="flex items-center gap-2">
               <span>{images[selectedIndex].titleEn}</span>
               <span className="text-gray-300">|</span>
               <span dir="rtl">{images[selectedIndex].titleAr}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
