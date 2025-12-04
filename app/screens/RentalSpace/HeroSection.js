@@ -8,7 +8,7 @@ export const HeroSection = () => {
     <section className="relative w-full lg:h-screen overflow-hidden">
       <Header />
 
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full pb-20">
 
         {/* Background Image */}
         <img

@@ -8,6 +8,7 @@ import Link from "next/link";
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const [isMobileCategoriesOpen, setIsMobileCategoriesOpen] = useState(false);
   const router = useRouter();
 
   const navigationItems = [
@@ -45,10 +46,18 @@ export const Header = () => {
 
   const handleMobileCategoryClick = (category) => {
     console.log("Selected category (mobile):", category);
+    setIsMobileCategoriesOpen(false);
     setIsOpen(false);
     // Navigate to product page with category as query parameter
     router.push(`/product?category=${encodeURIComponent(category)}`);
   };
+
+  // Close mobile categories when mobile menu closes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsMobileCategoriesOpen(false);
+    }
+  }, [isOpen]);
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 bg-gradient-to-r from-slate-700 via-slate-800 to-blue-900 pb-2 mb-10">
@@ -56,7 +65,7 @@ export const Header = () => {
         {/* Logo */}
         <Link href="/">
           <img
-            className="w-[100px] h-[100px] object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            className="w-[50px] h-[50px] object-cover cursor-pointer hover:opacity-80 transition-opacity"
             alt="Company logo"
             src="/assets/logo.png"
           />
@@ -138,27 +147,45 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[500px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[700px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
           }`}
       >
         <div className="mx-6 mt-4 p-6 space-y-6">
           {/* Mobile Categories Section */}
           <div className="border-b border-gray-600 pb-4">
-            <div className="text-white font-medium text-lg mb-3">Categories</div>
-            <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto">
-              {productCategories.map((category, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => {
-                    console.log("Mobile button clicked for:", category);
-                    handleMobileCategoryClick(category);
-                  }}
-                  className="text-white hover:text-gray-300 py-2 px-3 rounded transition-colors duration-200 text-base text-left w-full cursor-pointer"
-                >
-                  {category}
-                </button>
-              ))}
+            <button
+              type="button"
+              onClick={() => setIsMobileCategoriesOpen(!isMobileCategoriesOpen)}
+              className="flex items-center justify-between w-full text-white font-medium text-lg mb-3 cursor-pointer"
+            >
+              <span>Categories</span>
+              <ChevronDown
+                size={20}
+                className={`transition-transform duration-300 ${isMobileCategoriesOpen ? 'rotate-180' : ''
+                  }`}
+              />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileCategoriesOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
+              <div className="overflow-y-auto max-h-[250px] pr-2 custom-scrollbar">
+                <div className="grid grid-cols-1 gap-2 pb-3">
+                  {productCategories.map((category, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => {
+                        console.log("Mobile button clicked for:", category);
+                        handleMobileCategoryClick(category);
+                      }}
+                      className="text-white hover:text-gray-300 py-2 px-3 rounded transition-colors duration-200 text-base text-left w-full cursor-pointer"
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -190,6 +217,24 @@ export const Header = () => {
           onClick={() => setIsCategoriesOpen(false)}
         />
       )}
+
+      {/* Add custom scrollbar styles */}
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      `}</style>
     </header>
   );
 };
