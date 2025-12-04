@@ -12,7 +12,7 @@ export default function Footer() {
               href="mailto:info@hkb.sa" 
               className="font-semibold underline decoration-2 underline-offset-2 hover:text-blue-200 transition-colors"
             >
-              info@hkb.sa
+             satymarg@support.com
             </a>
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
               
                  <img
-              className="w-[160px] h-[60px] object-cover"
+              className="w-[100px] h-[100px] object-cover"
               alt="Company logo"
               src="/assets/logo.png"
             />
@@ -39,12 +39,12 @@ export default function Footer() {
             {/* Right Side - Services Info */}
             <div className="text-left lg:text-right max-w-md">
               <h2 className="text-3xl font-bold text-black mb-4">
-                Premium Office Spaces
+             Satymarg Healthcare Pvt. Ltd
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Premium work spaces for your professional
+               delivering high-quality, 
                 <br />
-                and business goals.
+                conomical general medicines.
               </p>
             </div>
           </div>

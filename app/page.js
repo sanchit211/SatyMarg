@@ -3,7 +3,6 @@ import { HeroSection } from '@/app/screens/RentalSpace/HeroSection'
 import PropertyOverview from './screens/RentalSpace/PropertySection'
 import ContactSection from './screens/RentalSpace/ContactSection'
 import Footer from './screens/RentalSpace/FooterSection'
-import ImageGallery from './screens/RentalSpace/ImageGallery'
 import { SocialHashtags, StructuredData } from './components/ui/SEO'
 
 
@@ -17,12 +16,8 @@ const page = () => {
       {/* Your existing sections */}
       <HeroSection />
 
-      <main className="flex-grow">
-        <div className="container mx-auto px-4 py-16">
-          <ImageGallery />
-        </div>
-      </main>
-            <PropertyOverview/>
+
+            {/* <PropertyOverview/> */}
       <ContactSection/>
       <Footer/>
     </main>

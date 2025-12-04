@@ -3,19 +3,18 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
-  title: "Private Office for Rent in Riyadh | Weekly & Monthly | مكتب خاص للإيجار أسبوعي وشهري بالرياض",
-  description: "Furnished private office for weekly & monthly rent in Riyadh. Luxury business space in prime location. Flexible small business offices available. مكتب خاص مفروش للإيجار الأسبوعي والشهري بالرياض - مكتب أعمال خاص فاخر",
-  keywords: `private office for rent in riyadh weekly, private office for rent in riyadh monthly, furnished private office weekly riyadh, furnished private office monthly riyadh, flexible private office rental riyadh, small private office weekly riyadh, small private office monthly riyadh, business private office weekly riyadh, business private office monthly riyadh, luxury private office monthly riyadh, مكتب خاص للإيجار أسبوعي بالرياض, مكتب خاص للإيجار شهري بالرياض, مكتب خاص مفروش أسبوعي بالرياض, مكتب خاص مفروش شهري بالرياض, مكتب خاص للإيجار مرن بالرياض, مكتب خاص صغير أسبوعي بالرياض, مكتب خاص صغير شهري بالرياض, مكتب أعمال خاص أسبوعي بالرياض, مكتب أعمال خاص شهري بالرياض, مكتب خاص فاخر شهري بالرياض`,
+  title: "Satymarg Healthcare | Quality General Medicine Products | Affordable Healthcare Solutions",
+  description: "Satymarg Healthcare Pvt. Ltd. - Promoters of quality general medicine products. Serving humanity with affordable, high-quality medicines for 4 years.",
+  keywords: `Satymarg Healthcare, General Medicine Products, Affordable Medicines, Pharma Products, Healthcare Solutions, Pharmaceutical Company, Quality Medicines, Economical Medicines, Pharma Promotion, Medicine Products, Healthcare Company, Pharmaceutical Business`,
   openGraph: {
-    title: "Private Office Rental Riyadh | Weekly & Monthly | مكتب خاص للإيجار بالرياض",
-    description: "Luxury furnished private offices for weekly & monthly rent in prime Riyadh location. Flexible small business offices available.",
+    title: "Satymarg Healthcare Pvt. Ltd. | Quality General Medicine",
+    description: "Promoting quality general medicine products with 21+ products range. Serving humanity with affordable healthcare solutions.",
     type: "website",
-    locale: "ar_SA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Private Office Rental Riyadh - Weekly & Monthly",
-    description: "Furnished private offices for weekly & monthly rent in Riyadh",
+    title: "Satymarg Healthcare - Quality Medicine Products",
+    description: "Affordable, high-quality general medicine products for better healthcare",
   },
   robots: "index, follow",
 }
@@ -26,21 +25,82 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="googlebot" content="notranslate" />
         <meta name="google" content="notranslate" />
-        {/* <link rel="canonical" href="https://yourapp.com" /> */}
-        <meta name="geo.region" content="SA-RIY" />
-        <meta name="geo.placename" content="Riyadh" />
+        {/* Company Information */}
+        <meta name="author" content="Satymarg Healthcare Pvt. Ltd." />
+        <meta name="company" content="Satymarg Healthcare Pvt. Ltd." />
+        <meta name="classification" content="Pharmaceutical Company" />
+        <meta name="topic" content="General Medicine Products" />
+        <meta name="subject" content="Healthcare and Medicine" />
         
-        {/* Additional meta tags for better SEO */}
-        <meta name="author" content="Saudi Office Rent" />
-        <meta name="classification" content="Office Rental Riyadh" />
-        <meta name="topic" content="Private Office Rentals" />
-        <meta name="subject" content="Office Space Rental in Riyadh" />
-        <meta name="coverage" content="Riyadh, Saudi Arabia" />
+        {/* Business Profile Information */}
+        <meta name="business:type" content="Pharmaceutical Promotion" />
+        <meta name="business:operation" content="6 days a week" />
+        <meta name="business:founder" content="Sachin Rastogi" />
+        <meta name="business:staff" content="3 full-time personnel" />
+        <meta name="business:turnover" content="25 Lakhs per year" />
+        <meta name="business:products" content="21 products" />
+        <meta name="business:history" content="4 years in operation" />
+        
+        {/* Contact Information */}
+        <meta name="contact:name" content="Sachin Rastogi (Founder)" />
+        <meta name="contact:phone" content="8755678796" />
+        <meta name="contact:email" content="support@satymarg.in" />
+        
+        {/* Address Information */}
+        <meta name="address:company" content="Satymarg Healthcare Pvt. Ltd." />
+        <meta name="address:street" content="Garh road" />
+        <meta name="address:city" content="Meerut" />
+        <meta name="address:country" content="India" />
+        
+        {/* Mission and Vision */}
+        <meta name="mission" content="To serve humanity with quality medicine at affordable price" />
+        <meta name="vision" content="Market acceptance growing day by day with face value in pharma sector" />
+        
+        {/* Additional SEO Tags */}
         <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        <link rel="canonical" href="https://satymarg.in" />
       </head>
       <body>
         {children}
         <Toaster position="top-right" reverseOrder={false} />
+        
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalBusiness",
+              "name": "Satymarg Healthcare Pvt. Ltd.",
+              "description": "Promoter of General Medicine Products, serving humanity with quality medicine at affordable prices",
+              "url": "https://satymarg.in",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Garh road",
+                "addressLocality": "Meerut",
+                "addressCountry": "India"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Support",
+                "telephone": "+918755678796",
+                "email": "support@satymarg.in"
+              },
+              "founder": {
+                "@type": "Person",
+                "name": "Sachin Rastogi"
+              },
+              "foundingDate": "2020",
+              "numberOfEmployees": 3,
+              "priceRange": "Affordable",
+              "currenciesAccepted": "INR",
+              "paymentAccepted": "Cash, Credit Card",
+              "openingHours": "Mo-Sa 09:00-18:00",
+              "sameAs": []
+            })
+          }}
+        />
       </body>
     </html>
   );

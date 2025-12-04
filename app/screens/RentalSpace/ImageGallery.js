@@ -71,9 +71,7 @@ export default function ImageGallery() {
         <h1 className="font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[48px] tracking-[-0.5px] leading-tight mb-4">
           Image Gallery
         </h1>
-        <p className="font-bold text-[#032174] text-2xl sm:text-3xl md:text-4xl lg:text-[32px] tracking-[-0.5px] leading-tight" dir="rtl">
-          معرض الصور
-        </p>
+        
       </div>
 
       {/* Main Image Display */}
