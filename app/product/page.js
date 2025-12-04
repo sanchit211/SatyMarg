@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Header } from "../screens/RentalSpace/Header";
 
 const productData = [
@@ -209,7 +209,7 @@ function findImageForProduct(name) {
   return "/assets/product-img/NUROJUMP SACHET.jpg";
 }
 
-const Product = () => {
+const ProductContent = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
   const [selectedCategoryData, setSelectedCategoryData] = useState(null);
@@ -248,20 +248,20 @@ const Product = () => {
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
                 >
                   <div className="p-8">
-                  <div className="flex flex-col items-center mb-6">
-  <img
-    className="w-70 h-60 object-contain"
-    alt={brand.name}
-    src={
-      brand.image && brand.image.trim() && brand.image !== "/assets/product-img/"
-        ? brand.image
-        : findImageForProduct(brand.name)
-    }
-  />
-  <h3 className="text-2xl font-bold text-gray-800 mt-3 text-center">
-    {brand.name}
-  </h3>
-</div>
+                    <div className="flex flex-col items-center mb-6">
+                      <img
+                        className="w-70 h-60 object-contain"
+                        alt={brand.name}
+                        src={
+                          brand.image && brand.image.trim() && brand.image !== "/assets/product-img/"
+                            ? brand.image
+                            : findImageForProduct(brand.name)
+                        }
+                      />
+                      <h3 className="text-2xl font-bold text-gray-800 mt-3 text-center">
+                        {brand.name}
+                      </h3>
+                    </div>
 
                     <div className="space-y-4">
                       <div className="bg-blue-50 rounded-lg p-5">
@@ -329,6 +329,22 @@ const Product = () => {
         )}
       </div>
     </div>
+  );
+};
+
+// Main Product component with Suspense boundary
+const Product = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading products...</p>
+        </div>
+      </div>
+    }>
+      <ProductContent />
+    </Suspense>
   );
 };
 
