@@ -7,207 +7,124 @@ const productData = [
   {
     category: "MULTIVITAMINS",
     brands: [
-      { name: "NUROJUMP SACHET", description: "PROVIDE ALL DAY ENERGY AND IMPROVE STAMINA", additional: "GENERAL WEAKNESS AND BOOST IMMUNITY",},
-      { name: "NUROJUMP G CAP", description: "PREVENT FROM DISEASE & PROTECT AGAINST OXIDATIVE STRESS", additional: "BOOST IMMUME SYSTEM & INCREASE ENERGY LEVELS" },
-      { name: "NUROJUMP INJECTION", description: "FREE FROM NEUROPATHIC PAIN", additional: "WORKS IN LUMBAGO & SCIATICA" },
-      { name: "NUROJUMP CAP", description: "DECREASE MUSCLE WEAKNESS & LETHARGY", additional: "REGUVINATES THE NATURAL IMMUNE RESPONSE" },
-      { name: "NUROJUMP SYRUP", description: "DECREASE MUSCLE WEAKNESS & LETHARGY", additional: "" }
+      { name: "NUROJUMP SACHET", description: "PROVIDE ALL DAY ENERGY AND IMPROVE STAMINA", additional: "GENERAL WEAKNESS AND BOOST IMMUNITY", image: "/assets/product-img/NUROJUMP SACHET.jpg" },
+      { name: "NUROJUMP G CAP", description: "PREVENT FROM DISEASE & PROTECT AGAINST OXIDATIVE STRESS", additional: "BOOST IMMUME SYSTEM & INCREASE ENERGY LEVELS", image: "/assets/product-img/NUROJUMP G.jpg" },
+      { name: "NUROJUMP INJECTION", description: "FREE FROM NEUROPATHIC PAIN", additional: "WORKS IN LUMBAGO & SCIATICA", image: "/assets/product-img/NUROJUMP INJECTION.jpg" },
+      { name: "NUROJUMP CAP", description: "DECREASE MUSCLE WEAKNESS & LETHARGY", additional: "REGUVINATES THE NATURAL IMMUNE RESPONSE", image: "/assets/product-img/NUROJUMP CAP.jpg" },
+      { name: "NUROJUMP SYRUP", description: "DECREASE MUSCLE WEAKNESS & LETHARGY", additional: "", image: "/assets/product-img/NUROJUMP SYRUP.jpg" }
     ]
   },
   {
     category: "PPI",
     brands: [
-      { name: "PANTAJUMP DSR CAP", description: "FOR NAUSEA AND VOMITTING", additional: "HYPERACIDITY AND GERD" },
-      { name: "PANTAJUMP L CAP", description: "FOR IBS CONSTIPATION", additional: "DYSPEPSIA" }
+      { name: "PANTAJUMP DSR CAP", description: "FOR NAUSEA AND VOMITING", additional: "HYPERACIDITY AND GERD", image: "/assets/product-img/PANTAJUMP DSR.jpg" },
+      { name: "PANTAJUMP L CAP", description: "FOR IBS CONSTIPATION", additional: "DYSPEPSIA", image: "/assets/product-img/PANTAJUMP L.jpg" }
     ]
   },
   {
     category: "NSAIDS",
     brands: [
-      { name: "ACLOJUMP P TAB", description: "FOR PAIN & FEVER", additional: "" },
-      { name: "ACLOJUMP SP TAB", description: "FOR PAIN & INFLAMATION", additional: "" },
-      { name: "ACLOJUMP AQ INJECTION", description: "FOR KIDNEY STONE PAIN AND SPORTS INJURY", additional: "" },
-      { name: "ACLOJUMP MR TAB", description: "FOR MUSCLE SPASM", additional: "" },
-      { name: "ACLOJUMP MF SYRUP", description: "FOR PAIN AND FEVER IN CHILDREN", additional: "" }
+      { name: "ZERODAY P TAB", description: "FOR PAIN & FEVER", additional: "", image: "/assets/product-img/ZERODAY P.jpg" },
+      { name: "ZERODAY SP TAB", description: "FOR PAIN & INFLAMATION", additional: "", image: "/assets/product-img/ZERODAY SP.jpg" },
+      { name: "ACLOJUMP AQ INJECTION", description: "FOR KIDNEY STONE PAIN AND SPORTS INJURY", additional: "", image: "/assets/product-img/ACLOJUMP AQ.jpg" },
+      { name: "ZERODAY MR TAB", description: "FOR MUSCLE SPASM", additional: "", image: "/assets/product-img/ZERODAY MR.jpg" },
+      { name: "ZERODAY MF SYRUP", description: "FOR PAIN AND FEVER IN CHILDREN", additional: "", image: "/assets/product-img/ZERODAY MF SYRUP.jpg" }
     ]
   },
   {
     category: "ANTI-DIARROHEAL",
     brands: [
-      { name: "OFLOJUMP OZ TAB", description: "FOR DIARROHEA AND DYSENTRY", additional: "" },
-      { name: "OFLOJUMP M SYRUP", description: "FOR DIARROHEA AND DYSENTRY IN CHILDREN", additional: "COATED PARTICLES IMPROVED THE TASTE" },
-      { name: "FLORAJUMP SUSPENSION", description: "FOR GUT FLORA DISTURBANCE AND DIARROHEA IN CHILDREN", additional: "" },
-      { name: "RACIBEST SB SACHET", description: "FOR ACUTE DIARROHEA IN CHILDREN", additional: "REDUCE THE RECURRENT DIARROHEA" }
+      { name: "OFLOJUMP OZ TAB", description: "FOR DIARROHEA AND DYSENTRY", additional: "", image: "/assets/product-img/OFLOJUMP OZ.jpg" },
+      { name: "OFLOJUMP M SYRUP", description: "FOR DIARROHEA AND DYSENTRY IN CHILDREN", additional: "COATED PARTICLES IMPROVED THE TASTE", image: "/assets/product-img/OFLOJUMP M SYRUP.jpg" },
+      { name: "FLORAJUMP SUSPENSION", description: "FOR GUT FLORA DISTURBANCE AND DIARROHEA IN CHILDREN", additional: "", image: "/assets/product-img/FLORAJUMP.jpg" },
+      { name: "RACIBEST SB SACHET", description: "FOR ACUTE DIARROHEA IN CHILDREN", additional: "REDUCE THE RECURRENT DIARROHEA", image: "/assets/product-img/RACIBEST SB.jpg" }
     ]
   },
   {
     category: "ANTI-BIOTICS",
     brands: [
-      { name: "ABOVCEF O TAB", description: "FOR VIRAL & TYPHOID FEVER PATIENTS", additional: "" },
-      { name: "AZITURN 100 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "AZITURN 250 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "AZITURN 500 TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "CEFOJUMP 100 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "CEFOJUMP 200 TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "CEFOJUMP O TAB", description: "FOR PATIENT IN TUFF INFECTION", additional: "" },
-      { name: "CEFOJUMP 50 DRY SYRUP", description: "FOR R.T.I AND TYPHOID FEVER", additional: "" },
-      { name: "MOXIJUMP LB CAP", description: "FOR R.T.I WITH NUMONYTIS PATIENT", additional: "" },
-      { name: "MOXIJUMP CV 625 TAB", description: "FOR R.T.I , UTI AND DENTAL INFECTIONS", additional: "" }
+      { name: "ABOVCEF O TAB", description: "FOR VIRAL & TYPHOID FEVER ", additional: "", image: "/assets/product-img/ABOVCEF O.jpg" },
+      { name: "AZITURN 100 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER IN CHILDREN", additional: "", image: "/assets/product-img/AZITURN 100 DT.jpg" },
+      { name: "AZITURN 250 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "", image: "/assets/product-img/AZITURN 250 DT.jpg" },
+      { name: "AZITURN 500 TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "", image: "/assets/product-img/AZITURN 500.jpg" },
+      { name: "CEFOJUMP 100 DT TAB", description: "FOR R.T.I AND TYPHOID FEVER IN CHILDREN", additional: "", image: "/assets/product-img/CEFOJUMP 100 DT.jpg" },
+      { name: "CEFOJUMP 200 TAB", description: "FOR R.T.I AND TYPHOID FEVER", additional: "", image: "/assets/product-img/CEFOJUMP 200.jpg" },
+      { name: "CEFOJUMP O TAB", description: "FOR PATIENT IN TUFF INFECTION", additional: "", image: "/assets/product-img/CEFOJUMP O.jpg" },
+      { name: "CEFOJUMP 50 DRY SYRUP", description: "FOR R.T.I AND TYPHOID FEVER", additional: "", image: "/assets/product-img/CEFOJUMP 50 DRY SYRUP.jpg" },
+      { name: "MOXIJUMP LB CAP", description: "FOR R.T.I WITH PNEUMONITIS PATIENT", additional: "", image: "/assets/product-img/MOXIJUMP LB.jpg" },
+      { name: "MOXIJUMP CV 625 TAB", description: "FOR R.T.I , UTI AND DENTAL INFECTIONS", additional: "", image: "/assets/product-img/MOXIJUMP CV 625.jpg" }
     ]
   },
   {
     category: "ANTI-EMITTING",
     brands: [
-      { name: "VOMIFINE MD TAB", description: "FOR NAUSEA AND VOMITING", additional: "" },
-      { name: "VOMIFINE SYRUP", description: "FOR NAUSEA AND VOMITING IN CHILDREN", additional: "" }
+      { name: "VOMIFINE MD TAB", description: "FOR NAUSEA & VOMITING", additional: "", image: "/assets/product-img/VOMIFINE MD.jpg" },
+      { name: "VOMIFINE SYRUP", description: "FOR NAUSEA & VOMITING IN CHILDREN", additional: "", image: "/assets/product-img/VOMIFINE SYRUP.jpg" }
     ]
   },
   {
     category: "ANTI-SPASMODIC",
     brands: [
-      { name: "DROTIREM TAB", description: "FOR PAINFUL SPASMODIC CONDITION", additional: "" }
+      { name: "DROTIREM TAB", description: "FOR PAINFUL SPASMODIC CONDITION", additional: "", image: "/assets/product-img/DROTIREM.jpg" }
     ]
   },
   {
     category: "ANTI-ALLERGIC",
     brands: [
-      { name: "MONTIJUMP L TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "" },
-      { name: "MONTIJUMP FX TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "" },
-      { name: "OVERCOLD DS/125 SYRUP", description: "FOR ALLERGIC RHINITIS, COMMON COLD AND SINUSITIS", additional: "" }
+      { name: "MONTIJUMP L TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "", image: "/assets/product-img/MONTIJUMP L.jpg" },
+      { name: "MONTIJUMP FX TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "", image: "/assets/product-img/MONTIJUMP FX.jpg" },
+      { name: "OVERCOLD DS/125 SYRUP", description: "FOR ALLERGIC RHINITIS, COMMON COLD AND SINUSITIS", additional: "", image: "/assets/product-img/OVERCOLD DS.jpg" }
     ]
   },
   {
     category: "COUGH SYRUP",
     brands: [
-      { name: "ASTHAJUMP DX SYRUP", description: "FOR IRRITATING DRY COUGH", additional: "" },
-      { name: "ASTHAJUMP LS SYRUP", description: "FOR PRODUCTIVE COUGH", additional: "" }
+      { name: "ASTHAJUMP DX SYRUP", description: "FOR IRRITATING DRY COUGH", additional: "", image: "/assets/product-img/ASTHAJUMP DX.jpg" },
+      { name: "ASTHAJUMP LS SYRUP", description: "FOR PRODUCTIVE COUGH", additional: "", image: "/assets/product-img/ASTHAJUMP LS.jpg" }
     ]
   },
   {
     category: "LIVER THERAPY",
     brands: [
-      { name: "KORHEP TAB", description: "FOR ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "" },
-      { name: "KORHEP UD TAB", description: "FOR NON-ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "" },
-      { name: "HEPTAJUMP SYRUP", description: "FOR ALCOHOLIC AND NON-ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "" }
+      { name: "KORHEP TAB", description: "FOR ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "", image: "/assets/product-img/KORHEP.jpg" },
+      { name: "KORHEP UD TAB", description: "FOR NON-ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "", image: "/assets/product-img/KORHEP UD.jpg" },
+      { name: "HEPTAJUMP SYRUP", description: "FOR ALCOHOLIC AND NON-ALCOHOLIC FATTY LEVER, VIRAL HEPATITIS, JAUNDICE", additional: "", image: "/assets/product-img/HEPTAJUMP.jpg" }
     ]
   },
   {
     category: "ENZYME",
     brands: [
-      { name: "ABOVZYME TAB", description: "FOR BLOATING AND INDIGESTION", additional: "" }
+      { name: "ABOVZYME TAB", description: "FOR BLOATING AND INDIGESTION", additional: "", image: "/assets/product-img/ABOVZYME.jpg" }
     ]
   },
   {
     category: "ALKALIZER & STONE SYRUP",
     brands: [
-      { name: "URIJUMP SYRUP", description: "CONTROL URINARY ACID CONTENT AND FLUSHES OUT PUS CELLS", additional: "PREVENT THE RECURRENCE OF THE URINARY DISORDERS" }
+      { name: "URIJUMP SYRUP", description: "CONTROL URINARY ACID CONTENT AND FLUSHES OUT PUS CELLS", additional: "PREVENT THE RECURRENCE OF THE URINARY DISORDERS", image: "/assets/product-img/URIJUMP.jpg" }
     ]
   },
   {
     category: "MOUTH PAINT",
     brands: [
-      { name: "ORAUSE MOUTH PAINT", description: "WORKS IN INFLAMMATION OF GUMS AND MOUTH ULCER", additional: "" }
+      { name: "ORAUSE MOUTH PAINT", description: "WORKS IN INFLAMMATION OF GUMS AND MOUTH ULCER", additional: "", image: "/assets/product-img/ORAUSE GEL.jpg" }
     ]
   },
   {
     category: "ANTI-FUNGAL",
     brands: [
-      { name: "FLUJUMP PLUS TAB", description: "HELPS IN WHERE SEVERE ITCHING ASSOCIATED WITH FUNGAL INFECTIONS AND SCABIES", additional: "" }
+      { name: "FLUJUMP PLUS TAB", description: "HELPS IN WHERE SEVERE ITCHING ASSOCIATED WITH FUNGAL INFECTIONS AND SCABIES", additional: "", image: "/assets/product-img/FLUJUMP PLUS.jpg" }
     ]
   },
   {
     category: "MIX RANGE",
     brands: [
-      { name: "INZOREST TAB", description: "WORKS IN COMORBID ANXIETY WITH DEPRESSION", additional: "" },
-      { name: "INZOREST BT TAB", description: "WORKS BY IMPROVING BLOOD FLOW TO THE INNER EAR", additional: "EFFECTIVE IN REDUCING THE FREQUENCY, SEVERITY AND DURATION OF VERTIGO." },
-      { name: "CALDIJUMP SACHET", description: "ENSURE STRONG BONES", additional: "WORKS IN OSTEOPOROSIS AND VITAMIN D DEFICIENCY WITH PAINFUL BONES AND BACK" },
-      { name: "CALDIJUMP NANOSHOT", description: "ENSURE STRONG BONES", additional: "WORKS IN OSTEOPOROSIS AND VITAMIN D DEFICIENCY WITH PAINFUL BONES AND BACK" }
+      { name: "INZOREST TAB", description: "WORKS IN COMORBID ANXIETY WITH DEPRESSION", additional: "", image: "/assets/product-img/INZOREST.jpg" },
+      { name: "INZOREST BT TAB", description: "WORKS BY IMPROVING BLOOD FLOW TO THE INNER EAR", additional: "EFFECTIVE IN REDUCING THE FREQUENCY, SEVERITY AND DURATION OF VERTIGO.", image: "/assets/product-img/INZOREST BT.jpg" },
+      { name: "CALDIJUMP SACHET", description: "ENSURE STRONG BONES", additional: "WORKS IN OSTEOPOROSIS AND VITAMIN D DEFICIENCY WITH PAINFUL BONES AND BACK", image: "/assets/product-img/CALDIJUMP SACHET.jpg" },
+      { name: "CALDIJUMP NANOSHOT", description: "ENSURE STRONG BONES", additional: "WORKS IN OSTEOPOROSIS AND VITAMIN D DEFICIENCY WITH PAINFUL BONES AND BACK", image: "/assets/product-img/CALDIJUMP NANO.jpg" }
     ]
   }
 ];
-
-const productImages = [
-  "ABOVCEF O.jpg",
-  "ABOVZYME.jpg",
-  "ACLOJUMP AQ.jpg",
-  "ASTHAJUMP DX.jpg",
-  "ASTHAJUMP LS.jpg",
-  "AZITURN 100 DT.jpg",
-  "AZITURN 250 DT.jpg",
-  "AZITURN 500.jpg",
-  "CALDIJUMP NANO.jpg",
-  "CALDIJUMP SACHET.jpg",
-  "CEFOJUMP 100 DT.jpg",
-  "CEFOJUMP 200.jpg",
-  "CEFOJUMP 50 DRY SYRUP.jpg",
-  "CEFOJUMP O.jpg",
-  "DROTIREM.jpg",
-  "FLORAJUMP.jpg",
-  "FLUJUMP PLUS.jpg",
-  "HEPTAJUMP.jpg",
-  "INZOREST BT.jpg",
-  "INZOREST.jpg",
-  "KORHEP UD.jpg",
-  "KORHEP.jpg",
-  "MONTIJUMP FX.jpg",
-  "MONTIJUMP L.jpg",
-  "MOXIJUMP CV 625.jpg",
-  "MOXIJUMP LB.jpg",
-  "NUROJUMP CAP.jpg",
-  "NUROJUMP G.jpg",
-  "NUROJUMP INJECTION.jpg",
-  "NUROJUMP SACHET.jpg",
-  "NUROJUMP SYRUP.jpg",
-  "OFLOJUMP M SYRUP.jpg",
-  "OFLOJUMP OZ.jpg",
-  "ORAUSE GEL.jpg",
-  "OVERCOLD 125.jpg",
-  "OVERCOLD DS.jpg",
-  "PANTAJUMP DSR.jpg",
-  "PANTAJUMP L.jpg",
-  "RACIBEST SB.jpg",
-  "URIJUMP.jpg",
-  "VOMIFINE MD.jpg",
-  "VOMIFINE SYRUP.jpg",
-  "ZERODAY MF SYRUP.jpg",
-  "ZERODAY MR.jpg",
-  "ZERODAY P.jpg",
-  "ZERODAY SP.jpg",
-];
-
-// Helper: find best-matching image filename for a given product name
-function findImageForProduct(name) {
-  if (!name) return null;
-  const normalize = (s) =>
-    s
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-
-  const nameNorm = normalize(name);
-  const nameTokens = nameNorm.split(" ").filter(Boolean);
-
-  let best = null;
-  let bestScore = 0;
-
-  for (const file of productImages) {
-    const fileKey = normalize(file.replace(/\.[^.]+$/, ""));
-    let score = 0;
-    for (const t of nameTokens) {
-      if (t && fileKey.includes(t)) score += 1;
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      best = file;
-    }
-  }
-
-  // require at least one matching token
-  if (bestScore > 0 && best) return `/assets/product-img/${best}`;
-  // fallback to a generic image
-  return "/assets/product-img/NUROJUMP SACHET.jpg";
-}
 
 const ProductContent = () => {
   const searchParams = useSearchParams();
@@ -249,15 +166,20 @@ const ProductContent = () => {
                 >
                   <div className="p-8">
                     <div className="flex flex-col items-center mb-6">
-                      <img
-                        className="w-70 h-60 object-contain"
-                        alt={brand.name}
-                        src={
-                          brand.image && brand.image.trim() && brand.image !== "/assets/product-img/"
-                            ? brand.image
-                            : findImageForProduct(brand.name)
-                        }
-                      />
+                      {/* Image container with bottom cropping */}
+                      <div className="relative w-full h-60 overflow-hidden">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <img
+                            className="w-full h-full object-contain"
+                            alt={brand.name}
+                            src={brand.image || "/assets/product-img/NUROJUMP SACHET.jpg"}
+                            style={{
+                              clipPath: 'inset(0 0 10% 0)', // Crop 30% from bottom
+                              objectFit: 'contain'
+                            }}
+                          />
+                        </div>
+                      </div>
                       <h3 className="text-2xl font-bold text-gray-800 mt-3 text-center">
                         {brand.name}
                       </h3>

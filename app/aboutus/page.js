@@ -14,7 +14,7 @@ export default function AboutPage() {
       </h1>
 
       <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-3xl mx-auto">
-        Promoting quality general medicine products with a mission to serve humanity by
+        Promoting quality general medicine products with a mission to serve humanity with 5+ years by
         making reliable, economical medicines available to everyone.
       </p>
     </div>
@@ -35,17 +35,17 @@ export default function AboutPage() {
                 week).
               </p>
 
-              <p>
+              {/* <p>
                 <strong>Founder / Contact:</strong> Sachin Rastogi (Founder)
-              </p>
+              </p> */}
 
               <p>
-                <strong>Number of staff:</strong> 3 full-time persons (including owner).
+                <strong>Number of staff:</strong> 9 full-time persons (including owner).
               </p>
 
               <div className="rounded-lg bg-slate-50 border border-slate-100 p-4">
                 <h3 className="font-medium mb-2">Founder's Message</h3>
-                <p className="text-slate-600">To serve humanity with quality medicine at affordable price.</p>
+                <p className="text-slate-600">To serve humanity for 5+ years with quality medicine at affordable price.</p>
               </div>
 
               <div className="rounded-lg bg-slate-50 border border-slate-100 p-4">
@@ -58,9 +58,9 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <Stat label="Products (now)" value="21" />
+                <Stat label="Products (now)" value="45" />
                 <Stat label="Started with" value="8 products" />
-                <Stat label="Turnover (yearly)" value="₹25 Lacs" />
+                <Stat label="Brands" value="50+" />
                 <Stat label="Years" value="4+" />
               </div>
             </div>
@@ -81,14 +81,14 @@ export default function AboutPage() {
 
               <div className="space-y-3 text-sm text-slate-700">
                 <ContactRow icon={<Phone className="w-4 h-4" />} label="Phone" value="8755678796" />
-                <ContactRow icon={<Mail className="w-4 h-4" />} label="Email" value="support@satymarg.in" />
-                <ContactRow icon={<MapPin className="w-4 h-4" />} label="Address" value="Garh Road, Meerut" />
+                <ContactRow icon={<Mail className="w-4 h-4" />} label="Email" value="satymarghealthcare@gmail.com" />
+                <ContactRow icon={<MapPin className="w-4 h-4" />} label="Address" value="A.O:-F-1 Mandawali , New delhi - 92" />
               </div>
             </div>
 
             <div className="mt-6">
               <a
-                href="mailto:support@satymarg.in"
+                href="mailto:satymarghealthcare@gmail.com"
                 className="inline-flex items-center justify-center w-full rounded-full border border-indigo-600 bg-indigo-600/5 px-4 py-2 text-indigo-700 hover:bg-indigo-50 transition"
               >
                 Contact Us
@@ -107,12 +107,11 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold">Founder — Sachin Rastogi</h3>
+           
               <p className="text-slate-600 mt-2 max-w-3xl">
-                "To serve humanity with quality medicine at affordable price." — Sachin Rastogi
-                founded Satymarg Healthcare 4 years ago with the straightforward goal of making
+                "To serve humanity with 5+ years with quality medicine at affordable price." —  Satymarg Healthcare 4 years ago with the straightforward goal of making
                 reliable medicines accessible and affordable. Starting with 8 products, the
-                company now offers 21 products and continues to expand its reach.
+                company now offers 45 products and continues to expand its reach.
               </p>
             </div>
           </div>
@@ -123,7 +122,7 @@ export default function AboutPage() {
           <h4 className="text-lg font-semibold">Want to know more or partner with us?</h4>
           <p className="text-slate-600 mb-4">Reach out for product lists, pricing and distributor opportunities.</p>
           <a
-            href="mailto:support@satymarg.in"
+            href="mailto:satymarghealthcare@gmail.com"
             className="inline-block px-6 py-3 rounded-full bg-indigo-600 text-white font-medium"
           >
             Email Support

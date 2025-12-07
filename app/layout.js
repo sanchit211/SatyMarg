@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         {/* Contact Information */}
         <meta name="contact:name" content="Sachin Rastogi (Founder)" />
         <meta name="contact:phone" content="8755678796" />
-        <meta name="contact:email" content="support@satymarg.in" />
+        <meta name="contact:email" content="satymarghealthcare@gmail.com" />
         
         {/* Address Information */}
         <meta name="address:company" content="Satymarg Healthcare Pvt. Ltd." />
@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
                 "@type": "ContactPoint",
                 "contactType": "Customer Support",
                 "telephone": "+918755678796",
-                "email": "support@satymarg.in"
+                "email": "satymarghealthcare@gmail.com"
               },
               "founder": {
                 "@type": "Person",

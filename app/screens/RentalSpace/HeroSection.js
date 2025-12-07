@@ -50,7 +50,7 @@ export const HeroSection = () => {
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center">
                 Satymarg Healthcare Pvt. Ltd., Garh Road, Meerut.
                 <br />
-                <span className="font-semibold text-lg">Contact: 8755678796 | support@satymarg.in</span>
+                <span className="font-semibold text-lg">Contact: 8755678796 | satymarghealthcare@gmail.com</span>
               </p>
             </div>
           </div>

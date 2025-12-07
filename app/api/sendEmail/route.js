@@ -53,7 +53,7 @@ export async function POST(req) {
     // Define email options
     const mailOptions = {
       from: `"Satymarg Healthcare" <${process.env.SMTP_USER}>`,
-      to: "koyoyo5948@cexch.com", // Replace with actual recipient email
+      to: "satymarghealthcare@gmail.com", // Replace with actual recipient email
       replyTo: email,
       subject: subject,
       html: `
