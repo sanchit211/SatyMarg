@@ -51,14 +51,14 @@ export default function AboutPage() {
               <div className="rounded-lg bg-slate-50 border border-slate-100 p-4">
                 <h3 className="font-medium mb-2">Business History</h3>
                 <p className="text-slate-600">
-                  Four years ago Sachin Rastogi started Satymarg Healthcare to provide
+                  Four years ago we have started Satymarg Healthcare to provide
                   economical and good quality medicines to people. What began with a small range
                   of products has steadily grown thanks to a focus on value and quality.
                 </p>
               </div>
 
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <Stat label="Products (now)" value="45" />
+                <Stat label="Products (now)" value="48" />
                 <Stat label="Started with" value="8 products" />
                 <Stat label="Brands" value="50+" />
                 <Stat label="Years" value="4+" />
@@ -111,7 +111,7 @@ export default function AboutPage() {
               <p className="text-slate-600 mt-2 max-w-3xl">
                 "To serve humanity with 5+ years with quality medicine at affordable price." —  Satymarg Healthcare 4 years ago with the straightforward goal of making
                 reliable medicines accessible and affordable. Starting with 8 products, the
-                company now offers 45 products and continues to expand its reach.
+                company now offers 48 products and continues to expand its reach.
               </p>
             </div>
           </div>

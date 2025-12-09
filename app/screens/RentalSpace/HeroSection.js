@@ -33,7 +33,7 @@ export const HeroSection = () => {
 
           {/* Sub Text */}
           <p className="text-white text-sm sm:text-lg md:text-xl max-w-xl lg:max-w-3xl leading-relaxed mb-6">
-            Satymarg Healthcare Pvt. Ltd. has been serving humanity for 4+ years by delivering 
+            Satymarg Healthcare Pvt. Ltd. has been serving humanity for 5+ years by delivering 
             high-quality, economical general medicine products with growing market acceptance.
           </p>
 
@@ -48,7 +48,7 @@ export const HeroSection = () => {
               </div>
 
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center">
-                Satymarg Healthcare Pvt. Ltd., Garh Road, Meerut.
+                Satymarg Healthcare Pvt. Ltd., A.O:-F-1 Mandawali , New delhi - 92
                 <br />
                 <span className="font-semibold text-lg">Contact: 8755678796 | satymarghealthcare@gmail.com</span>
               </p>
