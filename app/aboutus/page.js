@@ -1,10 +1,14 @@
 // app/about/page.jsx
 import React from "react";
 import { Stethoscope, MapPin, Phone, Mail } from "lucide-react";
+import { Header } from "../screens/RentalSpace/Header";
 
 export default function AboutPage() {
   return (
+    <>
+       <Header />
     <main className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
+       
       {/* HERO */}
 <section className="bg-gradient-to-r from-[#0A1A7A] via-[#1A2FA3] to-[#3B4FC7]">
   <div className="backdrop-blur-sm bg-black/20">
@@ -57,10 +61,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <Stat label="Products (now)" value="48" />
                 <Stat label="Started with" value="8 products" />
-                <Stat label="Brands" value="50+" />
+           
                 <Stat label="Years" value="4+" />
               </div>
             </div>
@@ -130,6 +134,7 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

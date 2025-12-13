@@ -1,8 +1,7 @@
 "use client";
-import { Button } from "@/app/components/ui/button";
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
 export const Header = () => {
@@ -10,10 +9,10 @@ export const Header = () => {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isMobileCategoriesOpen, setIsMobileCategoriesOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const navigationItems = [
     { label: "Categories", href: "#", hasDropdown: true },
-    // { label: "Properties", href: "#overview" },
     { label: "About Us", href: "/aboutus" },
     { label: "Contact us", href: "#contact" },
   ];
@@ -37,10 +36,55 @@ export const Header = () => {
     "MIX RANGE"
   ];
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    
+    if (pathname === "/") {
+      // If already on homepage, scroll to contact section
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // If element not found, try after a short delay
+        setTimeout(() => {
+          const contactSection = document.getElementById("contact");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    } else {
+      // If on another page, navigate to homepage with hash
+      router.push("/#contact");
+    }
+    
+    setIsOpen(false); // Close mobile menu if open
+  };
+
+  // Effect to handle hash scrolling on homepage
+  useEffect(() => {
+    // Only run on homepage
+    if (pathname === "/") {
+      // Check if URL has hash
+      const hash = window.location.hash;
+      if (hash) {
+        // Remove the # symbol
+        const id = hash.replace("#", "");
+        
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    }
+  }, [pathname]);
+
   const handleCategoryClick = (category) => {
     console.log("Selected category:", category);
     setIsCategoriesOpen(false);
-    // Navigate to product page with category as query parameter
     router.push(`/product?category=${encodeURIComponent(category)}`);
   };
 
@@ -48,7 +92,6 @@ export const Header = () => {
     console.log("Selected category (mobile):", category);
     setIsMobileCategoriesOpen(false);
     setIsOpen(false);
-    // Navigate to product page with category as query parameter
     router.push(`/product?category=${encodeURIComponent(category)}`);
   };
 
@@ -62,7 +105,7 @@ export const Header = () => {
   return (
     <header className="absolute top-0 left-0 w-full z-50 bg-gradient-to-r from-slate-700 via-slate-800 to-blue-900 pb-2 mb-10">
       <div className="flex items-center justify-between px-6 sm:px-10 lg:px-14 pt-3">
-        {/* Logo */}
+        {/* Logo - aligned left */}
         <Link href="/">
           <img
             className="w-[50px] h-[50px] object-cover cursor-pointer hover:opacity-80 transition-opacity"
@@ -71,47 +114,45 @@ export const Header = () => {
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navigationItems.map((item, index) => (
-            <div key={index} className="relative">
-              {item.hasDropdown ? (
-                <button
-                  onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                  className="flex items-center font-large text-[#fff] text-xl hover:text-[#a9a9a9] transition-colors duration-300"
-                >
-                  {item.label}
-                  <ChevronDown
-                    size={20}
-                    className={`ml-1 transition-transform duration-300 ${isCategoriesOpen ? 'rotate-180' : ''
-                      }`}
-                  />
-                </button>
-              ) : (
-                <a
-                  href={item.href}
-                  className="font-large text-[#fff] text-xl hover:text-[#a9a9a9] transition-colors duration-300"
-                >
-                  {item.label}
-                </a>
-              )}
-            </div>
-          ))}
+        {/* Desktop Nav - centered */}
+        <nav className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+          <div className="flex items-center space-x-10">
+            {navigationItems.map((item, index) => (
+              <div key={index} className="relative">
+                {item.hasDropdown ? (
+                  <button
+                    onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+                    className="flex items-center font-large text-[#fff] text-xl hover:text-[#a9a9a9] transition-colors duration-300"
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={20}
+                      className={`ml-1 transition-transform duration-300 ${isCategoriesOpen ? 'rotate-180' : ''
+                        }`}
+                    />
+                  </button>
+                ) : item.label === "Contact us" ? (
+                  <button
+                    onClick={handleContactClick}
+                    className="font-large text-[#fff] text-xl hover:text-[#a9a9a9] transition-colors duration-300 cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="font-large text-[#fff] text-xl hover:text-[#a9a9a9] transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <a href="#contact">
-            <Button
-              variant="outline"
-              className="px-6 py-2 rounded-full border-white bg-transparent hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
-            >
-              <span className="font-medium text-white text-lg hover:text-black transition-colors duration-300">
-                Book a Visit
-              </span>
-            </Button>
-          </a>
-        </div>
+        {/* Empty div to balance the layout - same width as logo */}
+        <div className="w-[50px] md:block hidden"></div>
 
         {/* Mobile Hamburger */}
         <button
@@ -135,7 +176,7 @@ export const Header = () => {
                     console.log("Button clicked for:", category);
                     handleCategoryClick(category);
                   }}
-                  className=" rounded-lg hover:bg-blue-50/80 transition-colors duration-200 text-left w-full cursor-pointer px-3 py-2"
+                  className="rounded-lg hover:bg-blue-50/80 transition-colors duration-200 text-left w-full cursor-pointer px-3 py-2"
                 >
                   {category}
                 </button>
@@ -191,22 +232,25 @@ export const Header = () => {
 
           {/* Other navigation items */}
           {navigationItems.filter(item => !item.hasDropdown).map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              className="block font-medium text-[#fff] text-lg transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </a>
+            item.label === "Contact us" ? (
+              <button
+                key={index}
+                onClick={handleContactClick}
+                className="block font-medium text-[#fff] text-lg transition-colors duration-300 text-left w-full cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <Link
+                key={index}
+                href={item.href}
+                className="block font-medium text-[#fff] text-lg transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
-
-          <Button
-            asChild
-            className="w-full rounded-full bg-transparent text-white hover:bg-gray-800 border border-white transition-colors duration-300"
-          >
-            <a href="#contact" onClick={() => setIsOpen(false)}>Book a Visit</a>
-          </Button>
         </div>
       </div>
 

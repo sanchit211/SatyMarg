@@ -74,7 +74,7 @@ const productData = [
       { name: "MONTIJUMP L TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "", image: "/assets/product-img/MONTIJUMP L.jpg" },
       { name: "MONTIJUMP FX TAB", description: "FOR ALLERGIC RHINITIS AND CHRONIC BRONCHITIS", additional: "", image: "/assets/product-img/MONTIJUMP FX.jpg" },
       { name: "OVERCOLD DS SYRUP", description: "FOR ALLERGIC RHINITIS, COMMON COLD AND SINUSITIS", additional: "", image: "/assets/product-img/OVERCOLD DS.jpg" },
-       { name: "OVERCOLD SYRUP", description: "CHILDREN OF 10 KG WEIGHT", additional: "", image: "/assets/product-img/overcold.jpeg" }
+       { name: "OVERCOLD SYRUP", description: "FOR ALLERGIC RHINITIS, COMMON COLD AND SINUSITIS(FOR 10 KG WEIGHT CHILD)", additional: "", image: "/assets/product-img/overcold.jpeg" }
     ]
   },
   {

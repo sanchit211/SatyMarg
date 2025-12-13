@@ -12,7 +12,7 @@ export default function Footer() {
               href="mailto:info@hkb.sa" 
               className="font-semibold underline decoration-2 underline-offset-2 hover:text-blue-200 transition-colors"
             >
-             satymarg@support.com
+          satymarghealthcare@gmail.com
             </a>
           </p>
         </div>
@@ -63,33 +63,13 @@ export default function Footer() {
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61584746435188" 
                 className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition-colors group"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5 text-gray-600 group-hover:text-blue-600" />
               </a>
-              <a 
-                href="#" 
-                className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition-colors group"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5 text-gray-600 group-hover:text-pink-600" />
-              </a>
-              <a 
-                href="#" 
-                className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition-colors group"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5 text-gray-600 group-hover:text-red-600" />
-              </a>
-              <a 
-                href="#" 
-                className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition-colors group"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5 text-gray-600 group-hover:text-blue-700" />
-              </a>
+             
             </div>
           </div>
         </div>
