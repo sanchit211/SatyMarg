@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { Header } from "../screens/RentalSpace/Header";
+import Image from "next/image";
 
 const productData = [
   {
@@ -169,17 +170,19 @@ const ProductContent = () => {
                     <div className="flex flex-col items-center mb-6">
                       {/* Image container with bottom cropping */}
                       <div className="relative w-full h-60 overflow-hidden">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <img
-                            className="w-full h-full object-contain"
-                            alt={brand.name}
-                            src={brand.image || "/assets/product-img/NUROJUMP SACHET.jpg"}
-                            style={{
-                              clipPath: 'inset(0 0 10% 0)', // Crop 30% from bottom
-                              objectFit: 'contain'
-                            }}
-                          />
-                        </div>
+                       <div className="absolute inset-0 flex items-center justify-center">
+  <Image
+    src={brand.image || "/assets/product-img/NUROJUMP SACHET.jpg"}
+    alt={brand.name}
+    fill
+    className="object-contain"
+    style={{
+      clipPath: "inset(0 0 10% 0)", // crop 10% from bottom
+    }}
+    sizes="100%"
+    priority={false}
+  />
+</div>
                       </div>
                       <h3 className="text-2xl font-bold text-gray-800 mt-3 text-center">
                         {brand.name}

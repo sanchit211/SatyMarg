@@ -2,6 +2,7 @@ import { Stethoscope, MapPin } from "lucide-react";
 import React from "react";
 import { Button } from "@/app/components/ui/button";
 import { Header } from "./Header";
+import Image from "next/image";
 
 export const HeroSection = () => {
   return (
@@ -11,11 +12,19 @@ export const HeroSection = () => {
       <div className="relative w-full h-full pb-20">
 
         {/* Background Image */}
-        <img
-          className="absolute inset-0 w-full h-full object-cover scale-105 blur-[2px]"
-          alt="Pharma business background"
-          src="https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=1920&q=80"
-        />
+<Image
+  src="https://images.pexels.com/photos/593451/pexels-photo-593451.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  alt="Pharmaceutical medicine bottles"
+  fill
+  className="object-cover scale-105 blur-[2px]"
+  priority
+  quality={80}
+  sizes="100vw"
+/>
+
+
+
+
 
         {/* Blue Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A7A]/70 via-[#1A2FA3]/60 to-[#1A2FA3]/70 mix-blend-multiply" />
@@ -27,7 +36,7 @@ export const HeroSection = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8 pt-20 md:pt-0">
           
           {/* Main Heading */}
-          <h1 className="font-bold text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight lg:leading-[1.1] my-4 max-w-xs sm:max-w-md md:max-w-3xl lg:max-w-5xl">
+          <h1 className="font-bold text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight lg:leading-[1.1] my-4 max-w-xs sm:max-w-md md:max-w-3xl lg:max-w-5xl mt-20">
             Promoting Quality General Medicines With Trust & Commitment
           </h1>
 
