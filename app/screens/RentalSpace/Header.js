@@ -12,7 +12,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   const navigationItems = [
-    { label: "Categories", href: "#", hasDropdown: true },
+    { label: "Products", href: "#", hasDropdown: true },
     { label: "About Us", href: "/aboutus" },
     { label: "Contact us", href: "#contact" },
   ];
