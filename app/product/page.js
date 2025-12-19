@@ -221,7 +221,7 @@ const ProductContent = () => {
                 onClick={() => window.history.back()}
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                ← Back to Categories
+                ← Back to Home Page
               </button>
             </div>
           </div>
