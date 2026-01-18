@@ -199,7 +199,7 @@ export const Header = () => {
               onClick={() => setIsMobileCategoriesOpen(!isMobileCategoriesOpen)}
               className="flex items-center justify-between w-full text-white font-medium text-lg mb-3 cursor-pointer"
             >
-              <span>Categories</span>
+              <span>Our Products</span>
               <ChevronDown
                 size={20}
                 className={`transition-transform duration-300 ${isMobileCategoriesOpen ? 'rotate-180' : ''
