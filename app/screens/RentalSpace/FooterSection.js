@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="text-xl font-medium">
             Have questions? Write to us directly on{' '}
             <a 
-              href="mailto:info@hkb.sa" 
+              href="mailto:satymarghealthcare@gmail.com" 
               className="font-semibold underline decoration-2 underline-offset-2 hover:text-blue-200 transition-colors"
             >
           satymarghealthcare@gmail.com
